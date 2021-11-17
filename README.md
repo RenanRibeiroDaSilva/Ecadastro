@@ -1,5 +1,12 @@
-@ -1,70 +1,2 @@
-# Getting Started with Create React App
+# Front-end
+
+## Projeto faculdade Programação para Internet
+Professor: Ricardo Leme https://github.com/ricardoleme
+
+Aluno: Gabirel Vilanova Alier
+Aluno: Renan Ribeiro da Silva
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
