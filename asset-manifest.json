@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/Ecadastro/static/js/main.c7e3199b.chunk.js",
+    "main.js.map": "/Ecadastro/static/js/main.c7e3199b.chunk.js.map",
+    "runtime-main.js": "/Ecadastro/static/js/runtime-main.b1a2b308.js",
+    "runtime-main.js.map": "/Ecadastro/static/js/runtime-main.b1a2b308.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/Ecadastro/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.bb37cbfb.chunk.js": "/Ecadastro/static/js/2.bb37cbfb.chunk.js",
+    "static/js/2.bb37cbfb.chunk.js.map": "/Ecadastro/static/js/2.bb37cbfb.chunk.js.map",
+    "index.html": "/Ecadastro/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/Ecadastro/static/css/2.0a9ec390.chunk.css.map",
+    "static/js/2.bb37cbfb.chunk.js.LICENSE.txt": "/Ecadastro/static/js/2.bb37cbfb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1a2b308.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.bb37cbfb.chunk.js",
+    "static/js/main.c7e3199b.chunk.js"
+  ]
+}
