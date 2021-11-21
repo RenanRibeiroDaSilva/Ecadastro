@@ -52,14 +52,15 @@ const CadastrosFuncionarios = () => {
         //Validação do campo Idade:
         if (!idade || idade === '') novosErros.idade = 'O campo idade não pode estar vazio!'
         else if (idade.length > 3) novosErros.idade = 'O campo idade não pode ser maior que 999!'
+        else if(idade < 1) novosErros.idade = 'Idade não poder ser menor que 1'
 
         //Validação do campo Genero:
         if (!genero || genero === '') novosErros.genero = 'O campo genero não pode estar vazio!'
 
         //Validação do campo Profissão:
         if (!profissao || profissao === '') novosErros.profissao = 'O campo profissao não pode estar vazio!'
-        else if (profissao.length > 100) novosErros.profissao = 'O profissao informado é muito grande!'
-        else if (profissao.length < 3) novosErros.profissao = 'O profissao informado é muito curto!'
+        else if (profissao.length > 100) novosErros.profissao = 'A profissao informada é muito grande!'
+        else if (profissao.length < 3) novosErros.profissao = 'A profissao informada é muito curta!'
 
         return novosErros
     }
@@ -123,10 +124,10 @@ const CadastrosFuncionarios = () => {
             <Row>
                 <Col xs={12} lg={4}>
                     {/*Formulario do cadastro dos funcionarios*/}
-                    <h4>&nbsp; <BsPersonPlusFill /> Cadastro dos Funcionarios</h4>
+                    <h4>&nbsp; <BsPersonPlusFill /> Cadastro dos Funcionários</h4>
                     <Form method="post">
                         <Form.Group controlId="nome">
-                            <Form.Label>Nome do funcionario</Form.Label>
+                            <Form.Label>Nome do funcionário</Form.Label>
                             <Form.Control
                                 name="nome"
                                 placeholder="Ex: João"
@@ -138,9 +139,10 @@ const CadastrosFuncionarios = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="idade">
-                            <Form.Label>Idade do funcionario</Form.Label>
+                            <Form.Label>Idade do funcionário</Form.Label>
                             <Form.Control
                                 name="idade"
+                                type="number"
                                 placeholder="Ex: 22"
                                 value={idade}
                                 onChange={alteraDadosFuncionario}
@@ -150,19 +152,20 @@ const CadastrosFuncionarios = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="genero">
-                            <Form.Label>Gênero do funcionario</Form.Label>
-                            <Form.Control
+                            <Form.Label>Gênero do funcionário</Form.Label>
+                            <Form.Select 
+                                aria-label="Default select example"
                                 name="genero"
-                                placeholder="Ex: Masculino"
                                 value={genero}
                                 onChange={alteraDadosFuncionario}
-                                isInvalid={!!erros.genero} />
-                            <Form.Control.Feedback type='invalid'>
-                                {erros.genero}
-                            </Form.Control.Feedback>
+                                isInvalid={!!erros.idade}>
+                                    <option>Selecione aqui</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                            </Form.Select>
                         </Form.Group>
                         <Form.Group controlId="profissao">
-                            <Form.Label>Profissão do funcionario</Form.Label>
+                            <Form.Label>Profissão do funcionário</Form.Label>
                             <Form.Control
                                 name="profissao"
                                 placeholder="Ex: Motorista"
@@ -184,14 +187,14 @@ const CadastrosFuncionarios = () => {
                         <Button variant="success" type="submit" onClick={(e) => salvarFuncionarios(e)} title="Cadastrar">
                             {salvandoFuncionarios
                                 ? <><Spinner animation="border" size="sm"/> Aguarde...</>
-                                : <> <MdSaveAlt /> Cadastrar novo funcionario</>
+                                : <> <MdSaveAlt /> Cadastrar novo funcionário</>
                             }
                         </Button>
                     </Form>
                 </Col>
                 <Col xs={12} lg={8}>
                     {/*Listagem do cadastro dos funcionarios*/}
-                    <h4>&nbsp; <FaClipboardList /> Listagem dos Funcionarios</h4>
+                    <h4>&nbsp; <FaClipboardList /> Listagem dos Funcionários</h4>
                     {carregandoFuncionarios && <>
                         <Button variant="success" disabled>
                             <Spinner
@@ -271,7 +274,7 @@ const CadastrosFuncionarios = () => {
                     <Modal.Title>Confirmação da Exclusão</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Confirma a exclusão do funcionario selecionado?
+                    Confirma a exclusão do funcionário selecionado?
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={() => setConfirmaExclusao(!confirmaExclusao)}>
