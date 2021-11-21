@@ -89,7 +89,7 @@ const CadastrosFuncionarios = () => {
                 setFuncionario(valorInicial) // Lipar  a tela com os valores iniciais
                 obterFuncionarios() // Atualiza a tela com os registros atualizados
             }).catch(function (error){
-                console.error(`Erro ao salvar a categoria: ${error.message}`)  
+                console.error(`Erro ao salvar o campo: ${error.message}`)  
             })
             setSalvandoFuncionarios(false)
         }
